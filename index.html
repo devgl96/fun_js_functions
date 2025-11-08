@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun JS Functions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Fun JS Functions</h1>
+      <h2>A collection of fun JS functions</h2>
+      <h2>
+        This is a open source project, if you don't find a function that you
+        need, you can
+        <a href="https://github.com/devgl96/fun_js_functions" target="_blank"
+          >contribute</a
+        >.
+      </h2>
+    </header>
+
+    <main>
+      <div id="input-section">
+        <div id="controls">
+          <select id="function-select">
+            <option value="">Select a function</option>
+          </select>
+          <button id="convert-btn">Convert</button>
+        </div>
+        <textarea id="input-area" placeholder="Paste your JSON here..."></textarea>
+      </div>
+      <div id="output-section">
+        <h3>Result:</h3>
+        <pre id="output-area"></pre>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Fun JS Functions</p>
+    </footer>
+    <script src="jsonToSQLUnion.js"></script>
+    <script src="paramsToSQLSet.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
