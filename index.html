@@ -3,41 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fun JS Functions</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Fun JS Functions</h1>
-      <h2>A collection of fun JS functions</h2>
-      <h2>
-        This is a open source project, if you don't find a function that you
-        need, you can
-        <a href="https://github.com/devgl96/fun_js_functions" target="_blank"
-          >contribute</a
-        >.
-      </h2>
-    </header>
 
-    <main>
-      <div id="input-section">
-        <div id="controls">
-          <select id="function-select">
-            <option value="">Select a function</option>
-          </select>
-          <button id="convert-btn">Convert</button>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"
+    />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+    <script src="tailwind.config.js"></script>
+
+    <title>Fun JS Functions</title>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col"
+  >
+    <header class="border-b border-slate-200 dark:border-zinc-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center space-x-3">
+            <span
+              class="material-symbols-outlined text-primary-DEFAULT text-3xl"
+              >integration_instructions</span
+            >
+            <h1 class="text-xl font-bold text-slate-900 dark:text-white">
+              Fun JS Functions
+            </h1>
+          </div>
+          <button
+            class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT focus:ring-offset-background-light dark:focus:ring-offset-background-dark"
+            id="theme-toggle"
+            type="button"
+          >
+            <span class="sr-only">Toggle theme</span>
+            <span class="material-symbols-outlined dark:hidden"
+              >light_mode</span
+            >
+            <span class="material-symbols-outlined hidden dark:inline"
+              >dark_mode</span
+            >
+          </button>
         </div>
-        <textarea id="input-area" placeholder="Paste your JSON here..."></textarea>
       </div>
-      <div id="output-section">
-        <h3>Result:</h3>
-        <pre id="output-area"></pre>
+    </header>
+    <main
+      class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12"
+    >
+      <div class="text-center max-w-2xl mx-auto">
+        <h2
+          class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          A Collection of Fun JS Functions
+        </h2>
+        <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+          This is an open source project. If you don't find a function that you
+          need, you can
+          <a
+            class="font-medium text-primary-DEFAULT hover:text-primary-hover underline"
+            href="https://github.com/devgl96/fun_js_functions"
+            target="_blank"
+            >contribute</a
+          >.
+        </p>
+      </div>
+      <div
+        class="mt-10 p-4 sm:p-6 lg:p-8 bg-white dark:bg-zinc-900/50 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-sm"
+      >
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0"
+        >
+          <div class="relative w-full sm:w-64">
+            <select
+              class="appearance-none bg-none w-full pl-3 pr-10 py-2.5 text-base border-slate-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-slate-900 dark:text-slate-100 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT rounded-md cursor-pointer"
+              id="function-select"
+            ></select>
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500 dark:text-slate-400"
+            >
+              <span class="material-symbols-outlined text-lg">unfold_more</span>
+            </div>
+          </div>
+          <button
+            class="w-full sm:w-auto border inline-flex items-center justify-center px-6 py-2.5 bg-primary-DEFAULT text-black font-semibold rounded-md shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT focus:ring-offset-background-light hover:text-white dark:focus:ring-offset-background-dark transition-colors dark:border-slate-700 dark:text-white duration-200"
+            id="convert-btn"
+          >
+            <span class="material-symbols-outlined mr-2 text-xl">bolt</span>
+            Convert
+          </button>
+        </div>
+      </div>
+      <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="flex flex-1 flex-col space-y-3">
+          <label
+            class="text-sm font-medium text-slate-700 dark:text-slate-300"
+            for="input-code"
+            >Input</label
+          >
+          <textarea
+            class="font-mono text-sm bg-slate-100 dark:bg-zinc-900 p-4 rounded-lg border border-slate-200 dark:border-zinc-800 flex-grow min-h-[300px] lg:min-h-[400px] overflow-auto"
+            id="input-area"
+          >
+          </textarea>
+        </div>
+
+        <div class="flex flex-1 flex-col space-y-3">
+          <label
+            class="text-sm font-medium text-slate-700 dark:text-slate-300"
+            for="output-area"
+            >Result</label
+          >
+          <pre
+            class="font-mono text-sm bg-slate-100 dark:bg-zinc-900 p-4 rounded-lg border border-slate-200 dark:border-zinc-800 flex-grow min-h-[300px] lg:min-h-[400px] overflow-auto"
+            id="output-area"
+          ></pre>
+        </div>
       </div>
     </main>
-
-    <footer>
-      <p>&copy; 2025 Fun JS Functions</p>
+    <footer class="mt-auto border-t border-slate-200 dark:border-zinc-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <p class="text-center text-sm text-slate-500 dark:text-slate-400">
+          © 2025 Fun JS Functions
+        </p>
+      </div>
     </footer>
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+    </script>
+
     <script src="jsonToSQLUnion.js"></script>
     <script src="paramsToSQLSet.js"></script>
     <script src="main.js"></script>
